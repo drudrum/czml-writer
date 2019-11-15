@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://analyticalgraphicsinc.github.io/czml-writer/Schema/Plane.json",
+    "title": "Plane",
+    "description": "A plane",
+    "type": "object",
+    "properties": {
+        "show": {
+            "$ref": "Boolean.json",
+            "description": "Whether or not the plane is shown.",
+            "default": true
+        },
+        "plane":{
+            "$ref": "PlaneProperty.json",
+            "description": "A Plane Property specifying the normal and distance for the plane.",
+            "default":{
+              "normal":[0,0,1],
+              "distance":0
+            }
+        },
+        "dimensions": {
+            "$ref": "PlaneDimensions.json",
+            "description": "The dimensions of the plane.",
+            "czmlRequiredForDisplay": true
+        },
+        "fill": {
+            "$ref": "Boolean.json",
+            "description": "Whether or not the plane is filled.",
+            "default": true
+        },
+        "material": {
+            "$ref": "Material.json",
+            "description": "The material to display on the surface of the plane.",
+            "default": "solid white"
+        },
+        "outline": {
+            "$ref": "Boolean.json",
+            "description": "Whether or not the plane is outlined.",
+            "default": false
+        },
+        "outlineColor": {
+            "$ref": "Color.json",
+            "description": "The color of the plane outline.",
+            "default": "black"
+        },
+        "outlineWidth": {
+            "$ref": "Double.json",
+            "description": "The width of the plane outline.",
+            "default": 1.0
+        },
+        "shadows": {
+            "$ref": "ShadowMode.json",
+            "description": "Whether or not the plane casts or receives shadows.",
+            "default": "DISABLED"
+        },
+        "distanceDisplayCondition": {
+            "$ref": "DistanceDisplayCondition.json",
+            "description": "The display condition specifying the distance from the camera at which this plane will be displayed."
+        }
+    }
+}

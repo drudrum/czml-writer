@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://analyticalgraphicsinc.github.io/czml-writer/Schema/PlaneDimensions.json",
+    "title": "Dimensions",
+    "description": "A Property specifying the width and height of the plane.",
+    "allOf": [
+        { "$ref": "InterpolatableProperty.json" },
+        { "$ref": "DeletableProperty.json" },
+        { "$ref": "ValueProperties/Cartesian2ValueProperty.json" }
+    ],
+    "type": [
+        "array",
+        "object"
+    ],
+    "items": {
+        "$ref": "#"
+    },
+    "properties": {
+        "cartesian2": {
+            "$ref": "Values/Cartesian2Value.json",
+            "description": "Plane size specified as a two-dimensional Cartesian value `[Width, Height]`."
+        }
+    }
+}
